@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
  * One number that grows whenever the floor changes - a reservation, a
- * bill, a ticket written (EventListener\RevisionListener): the pass and the
+ * bill, a ticket written (EntitySubscriber\Revisions): the pass and the
  * guests' phones ask it every few seconds (the poll controller) and redraw
  * when it has grown. Milliseconds, kept in the cache: no query to answer it.
  */

@@ -13,10 +13,10 @@ use Base\Restaurant\Repository\DishRepository;
 use Base\Restaurant\Repository\ReservationRepository;
 use Base\Restaurant\Repository\TicketRepository;
 use Base\Restaurant\Service\Availability;
-use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use Base\Database\Exception\UniqueConstraintViolation;
 use Base\Contract\UnitOfWork;
 use Base\Database\Repository\Repositories;
-use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Omnifood\Exception\NotSupportedException;
 use Omnifood\Model\Notification;
 use Omnifood\Model\NotificationSubject;
@@ -39,12 +39,14 @@ class Receiver
         private readonly Platforms $platforms,
         private readonly UnitOfWork $unitOfWork,
         private readonly Repositories $repositories,
-        private readonly ManagerRegistry $doctrine,
         private readonly TicketRepository $tickets,
         private readonly ReservationRepository $reservations,
         private readonly DishRepository $dishes,
         private readonly Availability $availability,
         private readonly EventDispatcherInterface $dispatcher,
+        // Doctrine's registry, when the persistence is omnibridge/doctrine: a refused flush closes its entity manager,
+        // which it opens again (resetManager()). No other persistence closes on a refused write.
+        #[Autowire(service: 'doctrine')] private readonly ?object $managers = null,
     ) {
     }
 
@@ -163,10 +165,12 @@ class Receiver
         try {
             $this->unitOfWork->persist(new PlatformEvent($name, mb_substr((string) $notification->id, 0, 190), mb_substr($notification->event, 0, 80)));
             $this->unitOfWork->flush();
-        } catch (UniqueConstraintViolationException) {
+        } catch (UniqueConstraintViolation) {
             // The same event, at the same moment, from the platform's retry: the ticket's own
             // unique reference has kept it single.
-            $this->doctrine->resetManager();
+            if (!$this->unitOfWork->isOpen() && null !== $this->managers && method_exists($this->managers, 'resetManager')) {
+                $this->managers->resetManager();
+            }
         }
     }
 

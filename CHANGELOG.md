@@ -3,6 +3,27 @@
 All notable changes to omnibase/restaurant. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 versions [Semantic Versioning](https://semver.org/).
 
+## [3.0.0]
+
+The bundle presumes no persistence: omnibridge/doctrine is suggested.
+
+### Changed
+
+- `omnibridge/doctrine` moves from `require` to `suggest` (and `require-dev`); the bundle names no Doctrine ORM,
+  DBAL, Persistence or bridge class.
+- **Breaking:** `EventListener\RevisionListener` (Doctrine's `onFlush` and `postFlush`) is replaced by
+  `EntitySubscriber\Revisions`, a listener of omnibase's neutral lifecycle (`Base\Contract\Lifecycle\OnFlush` and
+  `PostFlush`, read through `Base\Contract\Schedule`): the revision grows on any persistence.
+- `Omnifood\Receiver` catches the core's `Base\Database\Exception\UniqueConstraintViolation` in place of DBAL's
+  for a platform's repeated event; its `ManagerRegistry` argument is gone - Doctrine's registry is asked, when it
+  is there, only to open again an entity manager the refused flush closed.
+- `omnipack/marketplace` `^2.0|^3.0`.
+
+### Added
+
+- `tests/Kernel/WithoutSuggestedPackagesTest`: no persistence named, the revision on the neutral lifecycle, the
+  bundle boots.
+
 ## [2.0.1]
 
 - omnibridge/doctrine `^3.0|^4.0`: the bundle runs on omnibridge/doctrine 4.0 (dates read as `\DateTimeImmutable` in UTC) as on 3.x.

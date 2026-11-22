@@ -71,8 +71,8 @@ and moves the hand-over its customer follows when the ticket moves;
 `QuickOrderListener` settles the table's bill a paid quick order pays
 (`OrderPaidEvent`, a card payment come back from the provider) and ends a
 quick order on the restaurant's own page (`QuickOrderDoneEvent`: the table's
-page for a bill, the page after a take-home order). `RevisionListener`
-(Doctrine's `onFlush` and `postFlush`) grows the revision the pass watches
+page for a bill, the page after a take-home order). `EntitySubscriber\Revisions`
+(omnibase's neutral `OnFlush` and `PostFlush`, on any persistence) grows the revision the pass watches
 whenever anything of the restaurant is written, so the pass redraws.
 
 ## Twig functions

@@ -10,6 +10,11 @@ composer require omnipack/restaurant          # needs omnisense/omnibase 7.0, om
 composer require omnisense/omnifood omnifood/ubereats omnifood/thefork   # optional: the platforms
 ```
 
+The persistence bridge is the site's choice and is suggested, not required: `omnibridge/doctrine` (Doctrine ORM)
+or `omnibridge/eloquent`. The bundle names neither: the revision the pass watches grows on omnibase's neutral
+lifecycle (`EntitySubscriber\Revisions`), a platform's repeated event is caught as the core's
+`UniqueConstraintViolation`.
+
 ```php
 // config/bundles.php
 Base\Restaurant\RestaurantBundle::class => ['all' => true],

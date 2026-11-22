@@ -23,11 +23,10 @@
         "php": "^8.2",
         "doctrine/orm": "^2.15|^3.0",
         "doctrine/doctrine-bundle": "^2.11|^3.0",
-        "omnibridge/doctrine": "^3.0|^4.0",
         "omnibridge/symfony": "^3.0",
         "omnisense/omnibase": "^7.0",
         "omnipack/admin": "^2.0",
-        "omnipack/marketplace": "^2.0",
+        "omnipack/marketplace": "^2.0|^3.0",
         "symfony/config": "^7.0|^8.0",
         "symfony/dependency-injection": "^7.0|^8.0",
         "symfony/form": "^7.0|^8.0",
@@ -49,6 +48,7 @@
         "omnibase/restaurant": "self.version"
     },
     "suggest": {
+        "omnibridge/doctrine": "^3.0|^4.0: the persistence on Doctrine ORM (or omnibridge/eloquent): the bundle names neither",
         "omnisense/omnifood": "The delivery and booking platforms (omnifood/ubereats, omnifood/deliveroo, omnifood/justeat, omnifood/thefork): their orders become tickets on the pass, their reservations join the book, the menu and the out-of-stock dishes are pushed to them.",
         "omnisense/omnipulse": "What guests say elsewhere: the rating and latest reviews on the restaurant's page, the dashboard's tile (restaurant.reviews), through the family's reviews (Omnipulse\\Registry, Omnipulse\\Bridge\\Twig\\OmnipulseExtension) and one of its review providers below",
         "omnipulse/google-reviews": "Google reviews (Places API; Business Profile API with the owner's access: every review, and whether it was answered), with omnisense/omnipulse",
@@ -67,7 +67,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "2.x-dev"
+            "dev-main": "3.x-dev"
         }
     },
     "config": {
