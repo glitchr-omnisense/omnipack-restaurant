@@ -1,10 +1,24 @@
 {
-    "name": "omnibase/restaurant",
+    "name": "omnipack/restaurant",
     "description": "A restaurant on omnibase: the dining room and its layouts (a floor-plan editor, a QR poster per table), meal services and table reservations (availability under a lock, a public form, a management link, ICS), the menu (dishes as omnibase/marketplace products, sections, set menus, EU allergens), ordering at the table by QR code (sessions, rounds, tickets), the pass for the staff, and the delivery and booking platforms through omnisense/omnifood.",
     "type": "symfony-bundle",
-    "keywords": ["restaurant", "reservations", "floor plan", "qr code", "table ordering", "kitchen display", "omnibase", "omnifood"],
+    "keywords": [
+        "restaurant",
+        "reservations",
+        "floor plan",
+        "qr code",
+        "table ordering",
+        "kitchen display",
+        "omnibase",
+        "omnifood"
+    ],
     "license": "MIT",
-    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "authors": [
+        {
+            "name": "Marco Meyer",
+            "email": "marco.meyer@glitchr.io"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "doctrine/orm": "^2.15|^3.0",
@@ -12,8 +26,8 @@
         "omnibridge/doctrine": "^3.0|^4.0",
         "omnibridge/symfony": "^3.0",
         "omnisense/omnibase": "^7.0",
-        "omnibase/admin": "^2.0",
-        "omnibase/marketplace": "^2.0",
+        "omnipack/admin": "^2.0",
+        "omnipack/marketplace": "^2.0",
         "symfony/config": "^7.0|^8.0",
         "symfony/dependency-injection": "^7.0|^8.0",
         "symfony/form": "^7.0|^8.0",
@@ -31,6 +45,9 @@
         "phpunit/phpunit": "^12.5",
         "symfony/clock": "^6.2|^7.0|^8.0"
     },
+    "replace": {
+        "omnibase/restaurant": "self.version"
+    },
     "suggest": {
         "omnisense/omnifood": "The delivery and booking platforms (omnifood/ubereats, omnifood/deliveroo, omnifood/justeat, omnifood/thefork): their orders become tickets on the pass, their reservations join the book, the menu and the out-of-stock dishes are pushed to them.",
         "omnisense/omnipulse": "What guests say elsewhere: the rating and latest reviews on the restaurant's page, the dashboard's tile (restaurant.reviews), through the family's reviews (Omnipulse\\Registry, Omnipulse\\Bridge\\Twig\\OmnipulseExtension) and one of its review providers below",
@@ -38,8 +55,16 @@
         "omnipulse/tripadvisor": "Tripadvisor (Content API): the rating, the latest reviews, the link to write one, with omnisense/omnipulse",
         "omnipulse/trustpilot": "Trustpilot: the TrustScore, the latest reviews and whether they were answered (with a business user), with omnisense/omnipulse"
     },
-    "autoload": {"psr-4": {"Base\\Restaurant\\": "./src"}},
-    "autoload-dev": {"psr-4": {"Base\\Restaurant\\Tests\\": "./tests"}},
+    "autoload": {
+        "psr-4": {
+            "Base\\Restaurant\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Base\\Restaurant\\Tests\\": "./tests"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-main": "2.x-dev"

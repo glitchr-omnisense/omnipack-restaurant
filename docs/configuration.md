@@ -56,7 +56,7 @@ restaurant:
         # Guests order from their phone after scanning their table's code; false: the code shows the menu only.
         ordering:             true
 
-        # "Pay from my phone" at the end (needs omnibase/marketplace's quick order); false: the bill is settled at the till.
+        # "Pay from my phone" at the end (needs omnipack/marketplace's quick order); false: the bill is settled at the till.
         pay_online:           false
 
         # Requests a table's phones may make in a minute (rounds, calls, bill).
@@ -72,7 +72,7 @@ restaurant:
         # The shop's pages (/traiteur) answer.
         enabled:              true
 
-        # Orders are collected at the restaurant, on a slot (omnibase/marketplace's marketplace.pickup.slots).
+        # Orders are collected at the restaurant, on a slot (omnipack/marketplace's marketplace.pickup.slots).
         pickup:               true
 
         # Days the kitchen needs: 1, an order is for tomorrow at the earliest; 0, for today.

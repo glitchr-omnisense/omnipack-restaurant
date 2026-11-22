@@ -6,7 +6,7 @@ order: 10
 # Installation
 
 ```sh
-composer require omnibase/restaurant          # needs omnisense/omnibase 7.0, omnibase/admin, omnibase/marketplace
+composer require omnipack/restaurant          # needs omnisense/omnibase 7.0, omnipack/admin, omnipack/marketplace
 composer require omnisense/omnifood omnifood/ubereats omnifood/thefork   # optional: the platforms
 ```
 
@@ -27,7 +27,7 @@ restaurant_admin_controller:           # /admin/restaurant/salle, /admin/restaur
 ```
 
 The CRUD screens (rooms, tables, layouts, meal services, reservations,
-dishes, set menus, sections, tickets) are routed by omnibase/admin
+dishes, set menus, sections, tickets) are routed by omnipack/admin
 (`type: base_admin`); link them from the site's dashboard with
 `MenuItem::linkToCrud(...)`, the floor editor with
 `MenuItem::linkToRoute('restaurant_admin_floor')`, and add the
@@ -55,7 +55,7 @@ restaurant:
         cancel_until: 120            # minutes before: the guest may still change or cancel online
     table:
         ordering: true               # false: the QR code shows the menu only
-        pay_online: false            # "pay from my phone": needs omnibase/marketplace's quick order
+        pay_online: false            # "pay from my phone": needs omnipack/marketplace's quick order
         rate_limit: 20               # requests a minute per table and address
         max_lines: 40
         max_quantity: 20
@@ -99,7 +99,7 @@ $this->accounts->account('salle', $manager);              // in the group "Salle
 A restaurant without one of them leaves it out (`base.demo.exclude:
 [cuisine]`); a site that renames one declares the same identifier in its own
 provider. The labels are `demo.<identifier>.label` and `.description` in the
-`restaurant` domain (fr, en, de, ja). In `demo` omnibase/marketplace offers
+`restaurant` domain (fr, en, de, ja). In `demo` omnipack/marketplace offers
 its `dev` gateway alone: a take-home order and a table's bill are paid by
 nobody.
 

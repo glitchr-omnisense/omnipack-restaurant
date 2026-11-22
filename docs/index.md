@@ -1,9 +1,9 @@
 ---
-title: omnibase/restaurant
+title: omnipack/restaurant
 order: 1
 ---
 
-# omnibase/restaurant
+# omnipack/restaurant
 
 A restaurant's site on omnibase: the room and its reservations, the menu,
 ordering at the table by QR code, the staff's screen, the delivery and

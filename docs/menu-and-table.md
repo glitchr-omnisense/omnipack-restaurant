@@ -47,7 +47,7 @@ waiter, ask for the bill; the bill asked for, the phones send no more rounds.
 
 ### A dish's options
 
-A dish's options are omnibase/marketplace's (`Product\OptionGroup`, `Option`:
+A dish's options are omnipack/marketplace's (`Product\OptionGroup`, `Option`:
 a cooking, extras - one or several, a minimum, a maximum, a surcharge before
 VAT). The table's page shows them under the dish; a line of a round names
 those chosen by id (`options: [12, 15]`; a text stays a word for the
@@ -58,7 +58,7 @@ dish's VAT - is in the line's price; the ticket shows their labels.
 
 ### Paying from the phone
 
-With `restaurant.table.pay_online: true` and omnibase/marketplace's quick
+With `restaurant.table.pay_online: true` and omnipack/marketplace's quick
 order, the "Notre table" tab offers "Payer depuis mon téléphone": an e-mail
 address for the receipt, then the shop's payment
 (`restaurant_table_pay` `POST /t/{token}/payer`, `Service\TablePayments`).
@@ -83,5 +83,5 @@ new ─▶ accepted ─▶ preparing ─▶ ready ─▶ served
 
 `Ticket::moveTo()` refuses a step the status does not allow
 (`TransitionException`); each move dispatches `Event\TicketMovedEvent`.
-Tickets are independent of omnibase/marketplace's orders: a ticket is the
+Tickets are independent of omnipack/marketplace's orders: a ticket is the
 kitchen's paper.

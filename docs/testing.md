@@ -18,7 +18,7 @@ installed package:
 
 ```bash
 docker run --rm --network none \
-    -v "$PWD":/srv/demo/vendor/omnibase/restaurant:ro \
+    -v "$PWD":/srv/demo/vendor/omnipack/restaurant:ro \
     omnisense/omnibase-harness:latest test restaurant
 ```
 
@@ -38,7 +38,7 @@ bootstrap that registers its namespace after the harness's own (`Omnipulse\` to
 
 ```bash
 docker run --rm --network none \
-    -v "$PWD":/srv/demo/vendor/omnibase/restaurant:ro \
+    -v "$PWD":/srv/demo/vendor/omnipack/restaurant:ro \
     -v "$OMNIPULSE_CORE":/srv/omnipulse:ro -v "$BOOT_DIR":/srv/h:ro \
     omnisense/omnibase-harness:latest test restaurant --bootstrap /srv/h/boot.php
 ```
@@ -60,4 +60,4 @@ Tests: 69, Assertions: 481, Skipped: 7.
 | `RestaurantDemoAccountsTest` | one account for each of the restaurant's people, the roles configured, nobody above the manager, each label and sentence in the four catalogues |
 | `ReviewsTest` | the platforms shown are those configured; the latest reviews and those not answered; the page's origin, date and link, no JSON-LD; the tile |
 | `SeatingTest` | every time of a service on an empty floor; the smallest table that fits; joined tables; the staff may use what is not offered online; held and cancelled reservations; closed days and opening hours; the notice; a service's own limit of covers |
-| `Controller\CrudRequiredFieldsTest` | omnibase/admin's `CrudFieldsTestCase` on the screens |
+| `Controller\CrudRequiredFieldsTest` | omnipack/admin's `CrudFieldsTestCase` on the screens |

@@ -17,7 +17,7 @@ omnifood:
 ```
 
 **Keys typed in the back office.** `Omnifood\FoodKeysSection` declares, on
-omnibase/admin's API keys page, the fields of each configured platform
+omnipack/admin's API keys page, the fields of each configured platform
 (`api.food.<platform>.<option>`); `Omnifood\Platforms` builds each platform
 with them over the configured options (`Registry::create()`).
 

@@ -7,12 +7,12 @@ order: 80
 
 ## Where it stands
 
-Done with omnibase/marketplace's third pass (`Entity\Order\Pickup`,
+Done with omnipack/marketplace's third pass (`Entity\Order\Pickup`,
 `Product\OptionGroup`): the take-home dishes, the cold chain, the tracking
 page, the shop's orders on the pass, the dishes' options at the table
 ([The take-home shop](take-home.md), [The menu and ordering at the table](menu-and-table.md)).
 
-On omnibase/marketplace's quick order (`Service\QuickOrder`), loaded only
+On omnipack/marketplace's quick order (`Service\QuickOrder`), loaded only
 where it exists: the order without an account, the bill paid from a phone.
 
 ## What is left

@@ -6,7 +6,7 @@ order: 33
 # The take-home shop
 
 Dishes to cook at home - fresh, frozen, or kept on a shelf -, sold beside
-the menu: `/traiteur`. The shop is omnibase/marketplace's (products, prices
+the menu: `/traiteur`. The shop is omnipack/marketplace's (products, prices
 before VAT, VAT, payment, the hand-over `Entity\Order\Pickup`); what a
 restaurant adds is the dish, the cold chain, and the pass.
 
@@ -89,7 +89,7 @@ Chronofresh was not verified against a real contract.
 
 ## An order without an account
 
-Where omnibase/marketplace has its quick order (`Service\QuickOrder`), the
+Where omnipack/marketplace has its quick order (`Service\QuickOrder`), the
 shop's form takes the whole order: how many of each dish, the way, the day
 and slot, a name, an e-mail address, a phone. `Service\TakeHomeOrders::place()`
 checks the cold chain, makes the order for the address (`QuickOrder::buy()`:

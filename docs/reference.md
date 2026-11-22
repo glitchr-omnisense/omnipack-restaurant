@@ -65,7 +65,7 @@ when the page's script asks, with the page otherwise ([The pass](pass.md)).
 | `Base\Restaurant\Event\DishAvailabilityEvent` | the dish, whether it is available | `PlatformSubscriber` (out-of-stock pushed to the platforms) |
 | `Base\Restaurant\Event\ReservationChangedEvent` | the reservation, its previous status (null: new), whether the platform changed it | `PlatformSubscriber` |
 
-omnibase/marketplace's events too: `TakeawayListener` turns a hand-over
+omnipack/marketplace's events too: `TakeawayListener` turns a hand-over
 received (`PickupChangedEvent`: its order is paid) into a ticket on the pass,
 and moves the hand-over its customer follows when the ticket moves;
 `QuickOrderListener` settles the table's bill a paid quick order pays
